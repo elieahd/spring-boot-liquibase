@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: DevT Spring Boot - Liquibase demo
+  datasource:
+    url: jdbc:postgresql://${host}:${port}/${name}?sslmode=require
+    username: ${username}
+    password: ${password}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        format_sql: true
+  liquibase:
+    enabled: false
