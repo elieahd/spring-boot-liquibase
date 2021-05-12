@@ -1,8 +1,25 @@
 # Spring Boot - Liquibase
 
-## Liquibase
-### Changeset
-#### Format
+## Changelog
+All liquibase changes are logged through a changelog file : `changelog-master.yaml`.
+
+This file will list sequentially all the changes made to the database.
+
+Here is an [example](src/main/resources/db/changelog/db.changelog-master.yaml)
+```yaml
+databaseChangeLog:
+  - include:
+      file: src/main/resources/db/changelog/0001/changelog.yaml
+  - include:
+      file: src/main/resources/db/changelog/0002/0002-01_create_new_table.sql
+```
+
+## Changeset
+The changeset is a unit of change, a group of changeset form a changelog.
+
+A changeset in liquibase has 2 attributes : id and author.
+
+Here the format of a changset in `SQL`:
 ```sql
 --liquibase formatted sql
 --changeset author:id
@@ -11,7 +28,8 @@ CREATE TABLE ...
 
 -- rollback DROP TABLE ...;
 ```
-#### Example
+
+Here is an example:
 ```sql
 --liquibase formatted sql
 --changeset eliedaher:0001-1
