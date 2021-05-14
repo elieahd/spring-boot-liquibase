@@ -53,6 +53,10 @@ CREATE TABLE test (
 ```
 mvn liquibase:update
 ```
+#### Tag current database state
+```
+mvn liquibase:tag -Dliquibase.tag=10
+```
 #### Rollback by changeset count
 ```
 mvn liquibase:rollback -Dliquibase.rollbackCount=2
@@ -60,4 +64,8 @@ mvn liquibase:rollback -Dliquibase.rollbackCount=2
 #### Rollback to a specific date
 ```
 mvn liquibase:rollback -Dliquibase.rollbackDate=2020-05-30T11:30:00
+```
+#### Rollback to a previous tag
+```
+mvn liquibase:rollback -Dliquibase.rollbackTag=9
 ```
