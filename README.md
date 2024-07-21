@@ -1,5 +1,7 @@
 # Spring Boot - Liquibase
 
+![Medium](https://img.shields.io/badge/Medium-%23000000.svg?style=flat-square&logo=Medium&logoColor=white) [Evolving your database in a Spring Boot Application with Liquibase](https://eliedhr.medium.com/evolving-your-database-in-a-spring-boot-application-with-liquibase-709aad8336c8)
+
 ## Changelog
 All liquibase changes are logged through a changelog file : `changelog-master.yaml`.
 
